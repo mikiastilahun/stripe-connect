@@ -7,7 +7,7 @@
     "start": "nodemon --require dotenv/config index.js",
     "test": "mocha"
   },
-  "husky":{
+  "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
@@ -19,6 +19,7 @@
     ]
   },
   "dependencies": {
+    "bcrypt": "^3.0.3",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "dotenv": "^6.2.0",
