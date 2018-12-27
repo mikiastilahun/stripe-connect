@@ -1,4 +1,4 @@
-#stripe-connect-demo
+# stripe-connect-demo
 
  This is a simple project with a basic marketplace functionality such as:
         
