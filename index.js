@@ -8,6 +8,7 @@ const cors = require("cors");
 const debug = require("debug")("app");
 
 // import the routes
+const userRouter = require("./routes/user");
 
 // init the app
 const app = express();
@@ -18,8 +19,11 @@ app.use(cors());
 // parse the body-content
 app.use(bodyparser.json());
 
+// plug in the router objects
+app.use("/user", userRouter);
+
 //start the server
 app.listen(process.env.PORT ? process.env.PORT : 3000, err => {
   if (err) debug(err);
-  else debug(`${process.env.APP_NAME}has started on port ${process.env.PORT}`);
+  else debug(`${process.env.APP_NAME} has started on port ${process.env.PORT}`);
 });
