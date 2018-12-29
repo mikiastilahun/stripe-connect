@@ -27,6 +27,8 @@
     "jsonwebtoken": "^8.4.0",
     "moment": "^2.23.0",
     "mysql2": "^1.6.4",
+    "querystring": "^0.2.0",
+    "request": "^2.88.0",
     "sequelize": "^4.42.0",
     "sequelize-cli": "^5.4.0",
     "stripe": "^6.20.0"

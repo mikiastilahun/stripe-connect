@@ -80,9 +80,11 @@ exports.authenticate = (req, res) => {
             lastName: user.lastName,
             email: user.email
           };
+          const mo = moment().unix();
           const token = jwt.sign(
             {
-              exp: process.env.TOKEN_LIFE * 24 * 3600
+              // token expires in 30 days
+              exp: mo + 30 * 24 * 3600
             },
             process.env.SECRET
           );

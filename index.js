@@ -9,7 +9,10 @@ const debug = require("debug")("app");
 
 // import the routes
 const userRouter = require("./routes/user");
+const stripeRouter = require("./routes/stripe");
 
+//import the custom middleware
+const verifyToken = require("./app/middlewares/verifyToken");
 // init the app
 const app = express();
 
@@ -21,6 +24,11 @@ app.use(bodyparser.json());
 
 // plug in the router objects
 app.use("/user", userRouter);
+
+app.use((req, res, next) => {
+  verifyToken(req, res, next);
+});
+app.use("/stripe", stripeRouter);
 
 //start the server
 app.listen(process.env.PORT ? process.env.PORT : 3000, err => {
