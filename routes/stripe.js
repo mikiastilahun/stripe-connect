@@ -8,7 +8,7 @@ const stripe = require("../app/controllers/stripe");
 
 app
   // charge the buyer and pay to the seller take some cut
-  .post("/", (req, res) => {
+  .get("/", (req, res) => {
     stripe.charge(req, res);
   })
   //link to the oauth sign-in of stripe

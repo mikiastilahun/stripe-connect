@@ -76,6 +76,7 @@ exports.authenticate = (req, res) => {
         else {
           const data = {
             userId: user.id,
+            stripeId: user.StripeId,
             firstName: user.firstName,
             lastName: user.lastName,
             email: user.email
